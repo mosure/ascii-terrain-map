@@ -56,6 +56,7 @@ def terrain_height_to_color(
     sea_level = 0.0
     beach_level = 0.05
     grass_level = 0.7
+    snow_level = 0.95
 
     if out.height < sea_level:
         out.color = 'cyan'
@@ -63,5 +64,7 @@ def terrain_height_to_color(
         out.color = 'yellow'
     elif out.height < grass_level:
         out.color = 'green'
-    else:
+    elif out.height < snow_level:
         out.color = 'grey'
+    else:
+        out.color = 'white'
