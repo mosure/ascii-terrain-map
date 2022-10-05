@@ -1,0 +1,5 @@
+colorama
+noise
+numpy
+termcolor
+vec
