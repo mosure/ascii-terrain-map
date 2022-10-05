@@ -1,4 +1,4 @@
-from typing import List, Protocol, Sequence
+from typing import List, Protocol
 
 from vec import Vector2
 
@@ -37,4 +37,5 @@ class GeneratorStep(Protocol):
         xy: Vector2,
         previous: State,
         current: State,
+        out: Element,
     ) -> None: ...

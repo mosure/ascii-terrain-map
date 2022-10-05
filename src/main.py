@@ -39,13 +39,16 @@ def main() -> None:
         for x in range(previous_state.width):
             for y in range(previous_state.height):
                 st = Vector2(x / previous_state.width, y / previous_state.height)
-                xy = Vector2(x, y)
+                coord = Vector2(x, y)
+
+                out = current_state.elements[coord.x][coord.y]
 
                 step(
                     st,
-                    xy,
+                    coord,
                     previous_state,
-                    current_state
+                    current_state,
+                    out,
                 )
 
         previous_state = current_state
