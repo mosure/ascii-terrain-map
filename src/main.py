@@ -1,13 +1,9 @@
 import copy
 from typing import List
 
-import colorama
-colorama.init()
-from termcolor import cprint
-
 from generators import terrain_height_generator, terrain_height_to_density_character, terrain_height_to_color
+from output import print_state
 from shared import GeneratorStep, State, Vector2
-
 
 
 generator_steps: List[GeneratorStep] = [
@@ -15,19 +11,6 @@ generator_steps: List[GeneratorStep] = [
     terrain_height_to_density_character,
     terrain_height_to_color
 ]
-
-
-def print_state(state: State) -> None:
-    print('-' * (state.width + 2))
-
-    for y in range(state.height):
-        print('|', end='')
-        for x in range(state.width):
-            element = state.elements[x][y]
-            cprint(element.character, element.color, end='')
-        print('|')
-
-    print('-' * (state.width + 2))
 
 
 def main() -> None:
@@ -47,7 +30,6 @@ def main() -> None:
                     st,
                     coord,
                     previous_state,
-                    current_state,
                     out,
                 )
 

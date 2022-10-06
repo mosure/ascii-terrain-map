@@ -1,8 +1,9 @@
-from typing import List, Protocol
+from typing import List, Protocol, Tuple
 
 from vec import Vector2
 
 
+Color = Tuple[float, float, float]
 
 class Element():
     def __init__(
@@ -10,7 +11,7 @@ class Element():
         biome: float = 0.0,
         height: float = 0.0,
         character: str ='.',
-        color: str = 'white',
+        color: Color = (255, 255, 255),
     ) -> None:
         self.biome = biome
         self.height = height
