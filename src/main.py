@@ -1,15 +1,23 @@
 import copy
 from typing import List
 
-from generators import terrain_height_generator, terrain_height_to_density_character, terrain_height_to_color
+from generators import terrain_height_generator, \
+    terrain_height_to_density_character, \
+    terrain_height_to_color, \
+    shoreline_gradient_edge, \
+    set_seed
 from output import print_state
 from shared import GeneratorStep, State, Vector2
+
+
+set_seed(2)
 
 
 generator_steps: List[GeneratorStep] = [
     terrain_height_generator,
     terrain_height_to_density_character,
-    terrain_height_to_color
+    terrain_height_to_color,
+    shoreline_gradient_edge
 ]
 
 

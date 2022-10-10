@@ -12,11 +12,15 @@ class Element():
         height: float = 0.0,
         character: str ='.',
         color: Color = (255, 255, 255),
+        gradient_x: float = 0.0,
+        gradient_y: float = 0.0
     ) -> None:
         self.biome = biome
         self.height = height
         self.character = character
         self.color = color
+        self.gradient_x = gradient_x
+        self.gradient_y = gradient_y
 
 
 class State():
