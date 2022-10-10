@@ -32,7 +32,8 @@ def terrain_height_generator(
         return pnoise2(
             st.x,
             st.y,
-            octaves=4,
+            octaves=3,
+            persistence=0.2
         ) * height_scale
 
     st_delta_x = Vector2(0.01, 0.0)
